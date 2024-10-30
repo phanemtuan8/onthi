@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <style>
+        .header {
+            background-image: url('./img/banner2.png');
+            background-size: cover;
+            height: 280px;
+        }
+        
+        .btn-datmua {
+            background-color: green;
+        }
+        
+        .errMSG {
+            color: red;
+        }
+        
+        table {
+            margin-top: 20px;
+        }
+        
+        table tr th,
+        table,
+        table tr td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header"></div>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link " href="#">Active link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">Disabled link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">Active link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link " href="#">Disabled link</a>
+            </li>
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modelId">
+            Launch
+            </button>
+        </ul>
+        <!-- Button trigger modal -->
+
+
+        <!-- Modal -->
+        <div class="modal fade" id="modelId" tabindex="-1" role="dialog" aria-labelledby="modelTitleId" aria-hidden="true">
+            <div class="modal-dialog modal-xl" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                          </button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="">
+                            <div class="row">
+                                <div class="col-3">Ho va ten khach hang</div>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" id="ip_Ten">
+                                    <span class="errMSG" id="txt_Ten">*</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">Dien thoai</div>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" id="ip_Dt">
+                                    <span class="errMSG" id="txt_Dt">*</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">Dia chi</div>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" id="ip_Dc">
+                                    <span class="errMSG" id="txt_Dc">*</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">Chon san pham</div>
+                                <div class="col-9">
+                                    <Select class="form-select" id="ip_Csp">
+                                        <option value=""></option>
+                                        <option value="Ao thung cay thong">Ao thung cay thong</option>
+                                        <option value="Dam cong so">Dam cong so</option>
+                                        <option value="Chan vay cotton">Chan vay cotton</option>
+                                    </Select>
+                                    <span class="errMSG" id="txt_Csp">*</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">Don Gia</div>
+                                <div class="col-9">
+                                    <input type="text" disabled class="form-control" id="ip_Dg">
+                                    <span class="errMSG" id="txt_Dg">*</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">soluong</div>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" id="ip_Sl">
+                                    <span class="errMSG" id="txt_Sl">*</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">chon phuong thuc</div>
+                                <div class="col-9">
+                                    <div>
+                                        <input type="radio" name="pttt" id="ip_Cpt" value="Tien mat">Tien mat
+                                    </div>
+                                    <div>
+                                        <input type="radio" name="pttt" id="ip_Cpt" value="Tien the">Tien the
+                                    </div>
+                                    <span class="errMSG" id="txt_Cpt">*</span>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-3">thanh tien</div>
+                                <div class="col-9">
+                                    <input type="text" disabled class="form-control" id="ip_Tt">
+                                    <span class="errMSG" id="txt_Tt">*</span>
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success" id="submit-btn">Dat mua</button>
+                        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">huy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table class="table" id="myTable">
+            <tr>
+                <th>so tt</th>
+                <th>ho ten khach hang</th>
+                <th>dien thoai</th>
+                <th>dia chi</th>
+                <th>ten sp</th>
+                <th>don gia</th>
+                <th>so luong</th>
+                <th>thanh tien</th>
+                <th>phuong thuc thanh toan</th>
+            </tr>
+            <tr>
+                <td>(1)</td>
+                <td>(2)</td>
+                <td>(3)</td>
+                <td>(4)</td>
+                <td>(5)</td>
+                <td>(6)</td>
+                <td>(7)</td>
+                <td>(8)</td>
+                <td>(9)</td>
+
+            </tr>
+        </table>
+    </div>
+    <script src="./js/javascript.js"></script>
+</body>
+
+</html>
